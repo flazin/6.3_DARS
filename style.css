@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+
+:root{
+  /* Primary Colors */
+  --Bright-Blue: hsl(220, 98%, 61%);
+  --Check-Background: linear-gradient(hsl(192, 100%, 67%),  hsl(280, 87%, 65%));
+
+
+  /* Light Theme */
+  
+  --Very-Light-Gray: hsl(0, 0%, 98%);
+  --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+  --Light-Grayish-Blue: hsl(233, 11%, 84%);
+  --Dark-Blue: hsl(236, 9%, 61%);
+  --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+
+
+ /* Dark Theme */
+
+  --Very-Dark-Blue: hsl(235, 21%, 11%);
+  --Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+  --Light-Grayish-Blue: hsl(234, 39%, 85%);
+  --Light-Grayish-Blue-Hover: hsl(236, 33%, 92%);
+  --Dark-Grayish-Blue: hsl(234, 11%, 52%);
+  --Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+  --Very-Dark-Grayish-Blue-Hover: hsl(237, 14%, 26%);
+
+  font-size: 62.5%; /* 1rem = 10px */
+     /*my monitor resolution: 1360x768. 136rem x 76,8rem = */
+
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+
+  /* transition: .3s ease-in-out; */
+}
+
+
+html {
+  /* chrome://flags/#smooth-scrolling */
+  scroll-behavior: smooth;
+}
+
+
+body{
+
+  width: 100vw;
+  height: 100vh;
+
+  color: var(--Very-Dark-Grayish-Blue);
+
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  background-image: url(images/bg-desktop-light.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--Very-Light-Grayish-Blue);
+
+  transition: background-color .3s ease-in-out;
+}
+
+.container{
+  width: 51rem;
+  padding: 1rem;
+  position: relative;
+  top: 9%;
+}
+
+.logo{
+  margin-bottom: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.icons{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  color: #fff;
+}
+
+.icons h1{
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1.5rem;
+}
+
+.icons img{
+  cursor: pointer;
+  padding: 1rem;
+}
+
+
+.list{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.p-through{
+  text-decoration: line-through;
+  text-decoration-thickness: .15rem;
+}
+
+
+.flex-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom: 1px solid var(--Dark-Blue);
+  padding: 1rem;
+}
+
+.left{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.p-light{
+  color: var(--Very-Dark-Grayish-Blue);
+  font-weight: 700;
+
+  transition: color .3s ease-in-out;
+}
+
+.noChecked{
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--Dark-Blue);
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: var(--Dark-Blue);
+}
+
+.checked{
+  background-image: linear-gradient(hsl(192, 100%, 67%),  hsl(280, 87%, 65%));
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.cross{
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity .5s ease-in-out;
+}
+
+.flex-container:hover .cross{
+  opacity: 1;
+  transition: opacity .5s ease-in-out;
+}
+
+#mission{
+  width: 100%;
+  height: 5rem;
+  padding: 1rem 2rem;
+
+
+  border-radius: .7rem;
+
+  outline: none;
+  border: none;
+
+  transition: background-color .3s ease-in-out;
+}
+
+#mission .todo{
+  box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 0.27);
+}
+
+.todo{
+  background-color: #fff;
+  border-radius: .7rem;
+  padding: 1.5rem;
+
+  transition: background-color .3s ease-in-out;
+}
+
+
+.action{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding-block: 1rem;
+  background-color: #fff;
+  border-radius: .7rem;
+
+  transition: background-color .3s ease-in-out;
+}
+
+.options{
+  display: flex;
+  gap: 2rem;
+}
+
+.options-mobile{
+  display: none;
+}
+
+.action p{
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color .3s ease-in-out;
+}
+
+.options p:hover{
+  color: var(--Bright-Blue);
+  transition: color .3s ease-in-out;
+}
+
+
+/* DARK MODE */
+
+.dark-mode-body{
+  background-color: var(--Very-Dark-Blue);
+  background-image: url(images/bg-desktop-dark.jpg);
+  transition: background-color .3s ease-in-out;
+}
+
+.p-dark{
+  color: var(--Light-Grayish-Blue);
+  transition: color .3s ease-in-out;
+}
+
+.dark-mode-mission, .dark-mode-todo, .dark-mode-action{
+  background-color: var(--Very-Dark-Desaturated-Blue);
+  transition: background-color .3s ease-in-out;
+}
+
+.dark-mode-noChecked{
+  background-color: var(--Very-Dark-Desaturated-Blue);
+  content: '';
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--Dark-Blue);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 430px) {
+  
+  body{
+    padding-inline: 1rem ;
+  }
+
+  .container{
+    top: 8%;
+  }
+
+  .todo{
+    position: relative;
+  }
+
+  .action p{
+    font-size: 1.8rem;
+  }
+
+  .options{
+    display: none;
+  }
+
+  .options-mobile{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding: 1.5rem;
+    left: 50%;
+    top: 4rem;
+    background-color: #fff;
+
+    transform: translate(-50%, -50%);
+    
+    border-radius: .7rem;
+
+    transition: background-color .3s ease-in-out;
+  }
+
+  .options-mobile-dark{
+    background-color: var(--Very-Dark-Desaturated-Blue);
+    transition: background-color .3s ease-in-out;
+  }
+
+  .options-mobile p:hover{
+    color: var(--Bright-Blue);
+    transition: color .3s ease-in-out;
+    cursor: pointer;
+  }
+
+  .plist{
+    font-size: 2.2rem;
+  }
+}
+
